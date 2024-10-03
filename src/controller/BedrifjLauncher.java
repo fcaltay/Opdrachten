@@ -15,19 +15,19 @@ public class BedrifjLauncher {
 
     public static void main(String[] args) {
         // Omdat het static is, hebben we er toegang toe met de klas.
-        System.out.println("Aantal personen: " + Persoon.aantalPersonen);
+        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
         Persoon baas = new Persoon("Mark", "Den Haag", 10000);
-        System.out.println("Aantal personen: " + Persoon.aantalPersonen);
+        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
         //Tijdens het instantieren van baas wordt aantalPersonen verhoogd met 1(en is dus gelijk aan 1)
         System.out.println("Nummer van medewerker is " + baas.getPersoneelsNummer());
 
         Persoon medewerker = new Persoon("Caroline", "Delft", 4000);
-        System.out.println("Aantal personen: " + Persoon.aantalPersonen);
+        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
         System.out.println("Nummer van medewerker is " + medewerker.getPersoneelsNummer());
         // 15
         Persoon assistent = new Persoon("Klaas");
         Persoon manager = new Persoon();
-        System.out.println(Persoon.aantalPersonen);
+        System.out.println(Persoon.getAaantalpersonen());
 
         Persoon[] medewerkers = new Persoon[3];
         medewerkers[0] = new Persoon("Mark","Leek",10000);
