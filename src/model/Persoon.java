@@ -5,7 +5,7 @@ package model;
  * Purpose for the class
  */
 public class Persoon {
-    private static double GRENSWAARDE_BONUS = 4500.0;
+    private static final double GRENSWAARDE_BONUS = 4500.0;
     private static final String DEFAULT_NAAM = "onbekend";
     private static final String DEFAULT_WOONPLAATS = "onbekend";
     private static final int DEFAULT_MAANDSALARIS = 0;
