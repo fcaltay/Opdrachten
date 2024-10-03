@@ -1,5 +1,6 @@
 package controller;
 
+import model.Afdeling;
 import model.Persoon;
 
 import java.util.Arrays;
@@ -15,35 +16,24 @@ public class BedrifjLauncher {
 
     public static void main(String[] args) {
         // Omdat het static is, hebben we er toegang toe met de klas.
-        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
-        Persoon baas = new Persoon("Mark", "Den Haag", 10000);
-        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
-        //Tijdens het instantieren van baas wordt aantalPersonen verhoogd met 1(en is dus gelijk aan 1)
-        System.out.println("Nummer van medewerker is " + baas.getPersoneelsNummer());
+        /*Persoon[] medewerkers = new Persoon[3];
+        medewerkers[0] = new Persoon("Mark","Leek",10000, new Afdeling("Uitvoering","Hilversium"));
+        medewerkers[1] = new Persoon("Caroline","Marum",4000, new Afdeling("Support","Amsterdam"));
+        medewerkers[2] = new Persoon("Arjen","Roden",-200, new Afdeling("Management","Almere"));*/
 
-        Persoon medewerker = new Persoon("Caroline", "Delft", 4000);
-        System.out.println("Aantal personen: " + Persoon.getAaantalpersonen());
-        System.out.println("Nummer van medewerker is " + medewerker.getPersoneelsNummer());
-        // 15
+        Afdeling[] afdelingen = new Afdeling[4];
+        afdelingen[0] = new Afdeling("Uitvoering","Hilversium");
+        afdelingen[1] = new Afdeling("Support","Amsterdam");
+        afdelingen[2] = new Afdeling("Management","Almere");
+        afdelingen[3] = new Afdeling("Documentatie","Gouda");
+
+        Persoon baas = new Persoon("Mark", "Den Haag", 1000, afdelingen[2]);
+        Persoon medewerker = new Persoon("Caroline", "Delft", 4000, afdelingen[1]);
         Persoon assistent = new Persoon("Klaas");
-        Persoon manager = new Persoon();
-        System.out.println(Persoon.getAaantalpersonen());
 
-        Persoon[] medewerkers = new Persoon[3];
-        medewerkers[0] = new Persoon("Mark","Leek",10000);
-        medewerkers[1] = new Persoon("Caroline","Marum",4000);
-        medewerkers[2] = new Persoon("Arjen","Roden",-200);
-
-        for (int teller = 0; teller < medewerkers.length; teller++) {
-            System.out.printf("%s verdient %.2f ",medewerkers[teller].getNaam(), medewerkers[teller].getMaandsalaris());
-            if (medewerkers[teller].heeftRechtOpBonus()) {
-                System.out.println("en wel recht op een bonus.");
-            }
-            else {
-                System.out.println("en heeft geen recht op bonus.");
-            }
-        }
-
-
+        System.out.printf("Het aantal personen in het bedrijf is %d\n",Persoon.getAaantalpersonen());
+        System.out.printf("%s werkt in %s en woont in %s\n",baas.getNaam(), baas.getAfdeling().getAfdelingNaam(), baas.getAfdeling().getAfdelingPlaats());
+        System.out.printf("%s werkt in %s en woont in %s en verdient %.2f\n",medewerker.getNaam(), medewerker.getAfdeling().getAfdelingNaam(), medewerker.getAfdeling().getAfdelingPlaats(),medewerker.getMaandsalaris());
+        System.out.printf("%s werkt in %s en woont in %s\n",assistent.getNaam(), assistent.getAfdeling().getAfdelingNaam(), assistent.getAfdeling().getAfdelingPlaats());
     }
 }
