@@ -6,11 +6,11 @@ package model;
  */
 public class Persoon {
     private static double GRENSWAARDE_BONUS = 4500.0;
-    public static final String DEFAULT_NAAM = "onbekend";
-    public static final String DEFAULT_WOONPLAATS = "onbekend";
-    public static final int DEFAULT_MAANDSALARIS = 0;
-    public static final int MAANDEN_PER_JAAR = 12;
-    public static int aantalPersonen = 0;
+    private static final String DEFAULT_NAAM = "onbekend";
+    private static final String DEFAULT_WOONPLAATS = "onbekend";
+    private static final int DEFAULT_MAANDSALARIS = 0;
+    private static final int MAANDEN_PER_JAAR = 12;
+    private static int aantalPersonen = 0;
 
     private String naam;
     private String woonplaats;
@@ -37,22 +37,6 @@ public class Persoon {
         return naam;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
-    public String getWoonplaats() {
-        return woonplaats;
-    }
-
-    public void setWoonplaats(String woonplaats) {
-        this.woonplaats = woonplaats;
-    }
-
-    public double getMaandsalaris() {
-        return maandsalaris;
-    }
-
     public void setMaandsalaris(double maandsalaris) {
        if (maandsalaris < 0) {
            System.out.println("Het bedrag kan niet negatief zijn.");
@@ -77,6 +61,14 @@ public class Persoon {
 
     public boolean heeftRechtOpBonus() {
         return maandsalaris >= GRENSWAARDE_BONUS;
+    }
+
+    public static int getAaantalpersonen() {
+        return aantalPersonen;
+    }
+
+    public double getMaandsalaris() {
+        return maandsalaris;
     }
 
 }
