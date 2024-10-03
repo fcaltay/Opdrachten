@@ -35,4 +35,9 @@ public class Afdeling {
     public void setAfdelingPlaats(String afdelingPlaats) {
         this.afdelingPlaats = afdelingPlaats;
     }
+
+    @Override
+    public String toString() {
+        return String.format("afdeling %s te %s", this.afdelingNaam, this.afdelingPlaats);
+    }
 }

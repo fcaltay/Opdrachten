@@ -2,6 +2,8 @@ package controller;
 
 import model.Afdeling;
 import model.Persoon;
+import model.Werknemer;
+import model.Zzper;
 
 import java.util.Arrays;
 
@@ -21,13 +23,19 @@ public class BedrifjLauncher {
         afdelingen[2] = new Afdeling("Management","Almere");
         afdelingen[3] = new Afdeling("Documentatie","Gouda");
 
-        Persoon baas = new Persoon("Mark", "Den Haag", 1000, afdelingen[2]);
-        Persoon medewerker = new Persoon("Caroline", "Delft", 4000, afdelingen[1]);
-        Persoon assistent = new Persoon("Klaas");
+        Werknemer baas = new Werknemer ("Mark", "Den Haag", 1000, afdelingen[2]);
+        Werknemer  medewerker = new Werknemer("Caroline", "Delft", 4000, afdelingen[1]);
+        Zzper assistent = new Zzper("Klaas", "Diemen", afdelingen[3], 50.00);
 
         System.out.printf("Het aantal personen in het bedrijf is %d\n",Persoon.getAaantalpersonen());
-        System.out.printf("%s werkt in %s en woont in %s\n",baas.getNaam(), baas.getAfdeling().getAfdelingNaam(), baas.getAfdeling().getAfdelingPlaats());
-        System.out.printf("%s werkt in %s en woont in %s en verdient %.2f\n",medewerker.getNaam(), medewerker.getAfdeling().getAfdelingNaam(), medewerker.getAfdeling().getAfdelingPlaats(),medewerker.getMaandsalaris());
-        System.out.printf("%s werkt in %s en woont in %s\n",assistent.getNaam(), assistent.getAfdeling().getAfdelingNaam(), assistent.getAfdeling().getAfdelingPlaats());
+        System.out.println(baas.toString());
+        System.out.println(medewerker.toString());
+        System.out.println(assistent.toString());
+
+        System.out.printf("%s verdient %.2f per jaar\n", baas.getNaam(), baas.berekenJaarinkomen());
+        System.out.printf("%s verdient %.2f per jaar\n", medewerker.getNaam(), medewerker.berekenJaarinkomen());
+        assistent.huurIn(160);
+        System.out.printf("%s verdient %.2f per jaar\n", assistent.getNaam(), assistent.berekenJaarInkomen());
+
     }
 }
