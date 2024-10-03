@@ -15,12 +15,6 @@ public class BedrifjLauncher {
     }
 
     public static void main(String[] args) {
-        // Omdat het static is, hebben we er toegang toe met de klas.
-        /*Persoon[] medewerkers = new Persoon[3];
-        medewerkers[0] = new Persoon("Mark","Leek",10000, new Afdeling("Uitvoering","Hilversium"));
-        medewerkers[1] = new Persoon("Caroline","Marum",4000, new Afdeling("Support","Amsterdam"));
-        medewerkers[2] = new Persoon("Arjen","Roden",-200, new Afdeling("Management","Almere"));*/
-
         Afdeling[] afdelingen = new Afdeling[4];
         afdelingen[0] = new Afdeling("Uitvoering","Hilversium");
         afdelingen[1] = new Afdeling("Support","Amsterdam");
