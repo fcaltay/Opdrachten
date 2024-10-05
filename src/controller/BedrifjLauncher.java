@@ -42,6 +42,5 @@ public class BedrifjLauncher {
        for (int teller = 0; teller < werknemers.length; teller++) {
            toonJaarInkomen(werknemers[teller]);
        }
-
     }
 }
