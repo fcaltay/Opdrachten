@@ -35,7 +35,8 @@ public class Werknemer extends Persoon {
         }
     }
 
-    public double berekenJaarinkomen() {
+
+    public double berekenJaarInkomen() {
         return 13 * maandSalaris;
     }
 

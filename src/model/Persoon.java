@@ -42,6 +42,7 @@ public class Persoon {
         this.personeelsNummer = personeelsNummer;
     }
 
+
     public double berekenJaarInkomen(){
         return 0;
     }
