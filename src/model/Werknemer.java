@@ -5,6 +5,7 @@ package model;
  * Purpose for the class
  */
 public class Werknemer extends Persoon {
+    public static final int ANTAL_MAANDEN_IN_EEN_JAAR = 12;
     private static final double GRENSWAARDE_BONUS = 4500.0;
     private double maandSalaris;
 
@@ -37,7 +38,10 @@ public class Werknemer extends Persoon {
 
 
     public double berekenJaarInkomen() {
-        return 13 * maandSalaris;
+        if(heeftRechtOpBonus()){
+            return (ANTAL_MAANDEN_IN_EEN_JAAR * maandSalaris) + maandSalaris;
+        }
+        return (ANTAL_MAANDEN_IN_EEN_JAAR * maandSalaris);
     }
 
     public boolean heeftRechtOpBonus() {
