@@ -26,21 +26,35 @@ public class BedrifjLauncher {
         afdelingen[2] = new Afdeling("Management", "Almere");
         afdelingen[3] = new Afdeling("Documentatie", "Gouda");
 
-        Persoon[] werknemers = new Persoon[4];
+
         Werknemer baas = new Werknemer("Mark", "Den Haag", 1000, afdelingen[2]);
         Werknemer medewerker = new Werknemer("Caroline", "Delft", 4000, afdelingen[1]);
         Zzper assistent = new Zzper("Klaas", "Diemen", afdelingen[3], 50.00);
         Zzper projectleider = new Zzper("Ronald", "Zaandam", afdelingen[0], 80.00);
 
-        werknemers[0] = baas;
-        werknemers[1] = medewerker;
-        werknemers[2] = assistent;
-        werknemers[3] = projectleider;
+
+        Persoon[] werknemers = {
+            baas, medewerker, assistent, projectleider
+        };
+
+        // Persoon[] werknemers = new Persoon[4];
+        // werknemers[0] = baas;
+        // werknemers[1] = medewerker;
+        // werknemers[2] = assistent;
+        // werknemers[3] = projectleider;
+
         System.out.printf("Het aantal personen in het bedrijf is %d\n", Persoon.getAaantalpersonen());
         assistent.huurIn(160);
         projectleider.huurIn(320);
-       for (int teller = 0; teller < werknemers.length; teller++) {
-           toonJaarInkomen(werknemers[teller]);
-       }
+
+        /* for (int teller = 0; teller < werknemers.length; teller++) {
+            toonJaarInkomen(werknemers[teller]);
+        }*/
+        //Enhanced for-loop
+
+        for (Persoon werknemer : werknemers) {
+            toonJaarInkomen(werknemer);
+        }
+
     }
 }
