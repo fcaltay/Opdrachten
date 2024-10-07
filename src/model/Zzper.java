@@ -4,7 +4,7 @@ package model;
  * @author Furkan Altay
  * Purpose for the class
  */
-public class Zzper extends Persoon{
+public class Zzper extends Persoon implements Oproepbaar{
     private final int DEFAULT_UREN_GEWERKT = 0;
 
     private double uurtarief;
@@ -39,6 +39,7 @@ public class Zzper extends Persoon{
         return uurtarief * urenGewerkt;
     }
 
+    @Override
     public void huurIn(int uren) {
         urenGewerkt += uren;
     }

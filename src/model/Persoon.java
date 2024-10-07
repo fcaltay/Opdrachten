@@ -4,7 +4,7 @@ package model;
  * @author Furkan Altay
  * Purpose for the class
  */
-public class Persoon {
+public class Persoon implements Comparable<Persoon>{
     protected static final String DEFAULT_NAAM = "onbekend";
     protected static final String DEFAULT_WOONPLAATS = "onbekend";
     protected static int aantalPersonen = 0;
@@ -62,6 +62,11 @@ public class Persoon {
     @Override
     public String toString() {
         return String.format("%s woont in %s en werkt op %s", this.naam, this.woonplaats, afdeling.toString());
+    }
+
+    @Override
+    public int compareTo(Persoon anderePersoon) {
+        return this.naam.compareTo(anderePersoon.getNaam());
     }
 }
 

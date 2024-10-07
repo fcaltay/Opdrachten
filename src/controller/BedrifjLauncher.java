@@ -1,12 +1,11 @@
 package controller;
 
-import model.Afdeling;
-import model.Persoon;
-import model.Werknemer;
-import model.Zzper;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * @author Furkan Altay
@@ -49,9 +48,26 @@ public class BedrifjLauncher {
             }
 
         }
+
+        personen.add(new Vrijwilliger("Ambi", "Amsterdam", afdelingen[0]));
+        personen.add(new Vrijwilliger("Naledi", "Gaborone", afdelingen[1]));
+        personen.add(new Vrijwilliger("Ceren", "Istanboel", afdelingen[2]));
+        personen.add(new Vrijwilliger("Haining", "Shaoxing", afdelingen[3]));
+
         for (Persoon persoon : personen) {
-            toonJaarInkomen(persoon);
+            if (persoon instanceof Vrijwilliger){
+                ((Vrijwilliger) persoon).huurIn(160);
+            }
+
         }
+        Collections.sort(personen);
+        // Om te sorteren.
+        for (Persoon persoon : personen) {
+            System.out.println(persoon.toString());
+
+        }
+
+
 
     }
 }
