@@ -9,6 +9,7 @@ public class Vrijwilliger extends Persoon implements Oproepbaar{
 
     public Vrijwilliger(String naam, String woonplaats, Afdeling afdeling) {
         super(naam, woonplaats, afdeling);
+        urenGewerkt = 0;
     }
 
     public double berekenJaarInkomen(){
@@ -17,7 +18,7 @@ public class Vrijwilliger extends Persoon implements Oproepbaar{
 
     @Override
     public void huurIn(int uren) {
-
+        urenGewerkt += uren;
     }
 
     @Override

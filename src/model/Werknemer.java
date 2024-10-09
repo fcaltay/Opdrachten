@@ -1,17 +1,24 @@
 package model;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * @author Furkan Altay
  * Purpose for the class
  */
 public class Werknemer extends Persoon {
     public static final int ANTAL_MAANDEN_IN_EEN_JAAR = 12;
+    public static final int DEFAULT_MAAND_SALARIS = 0;
     private static final double GRENSWAARDE_BONUS = 4500.0;
     private double maandSalaris;
+    Scanner toetsenbord = new Scanner(System.in);
+
 
     public Werknemer(String naam, String woonplaats,  double maandSalaris, Afdeling afdeling) {
         super(naam, woonplaats, afdeling);
         this.maandSalaris = maandSalaris;
+        setMaandSalaris(maandSalaris);
     }
 
     public Werknemer(String naam) {
@@ -28,14 +35,10 @@ public class Werknemer extends Persoon {
 
     public void setMaandSalaris(double maandSalaris) {
         if (maandSalaris < 0) {
-            System.out.println("Het bedrag kan niet negatief zijn.");
-            this.maandSalaris = 0;
+            throw new IllegalArgumentException("Het maandsalaris mag niet negatief zijn.");
         }
-        else {
-            this.maandSalaris = maandSalaris;
-        }
+        this.maandSalaris = maandSalaris;
     }
-
 
     public double berekenJaarInkomen() {
         if(heeftRechtOpBonus()){

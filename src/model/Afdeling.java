@@ -20,20 +20,12 @@ public class Afdeling {
         this(DEFAULT_NAAM,DEFAULT_PLAATS);
     }
 
-    public String getAfdelingNaam() {
-        return afdelingNaam;
-    }
-
-    public void setAfdelingNaam(String afdelingNaam) {
-        this.afdelingNaam = afdelingNaam;
-    }
-
     public String getAfdelingPlaats() {
         return afdelingPlaats;
     }
 
-    public void setAfdelingPlaats(String afdelingPlaats) {
-        this.afdelingPlaats = afdelingPlaats;
+    public String getAfdelingNaam() {
+        return afdelingNaam;
     }
 
     @Override
